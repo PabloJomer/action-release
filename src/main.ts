@@ -10,7 +10,9 @@ import * as options from './options';
     options.checkEnvironmentVariables();
 
     const environment = options.getEnvironment();
+    const environment = options.getEnvironment();
     const sourcemaps = options.getSourcemaps();
+    const dists = options.getDists();
     const shouldFinalize = options.getBooleanOption('finalize', true);
     const ignoreMissing = options.getBooleanOption('ignore_missing', false);
     const ignoreEmpty = options.getBooleanOption('ignore_empty', false);
@@ -45,6 +47,7 @@ import * as options from './options';
           const sourceMapOptions = {
             include: sourcemaps,
             projects: localProjects,
+            dist: dists,
             urlPrefix,
             stripCommonPrefix,
           };
